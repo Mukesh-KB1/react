@@ -20,7 +20,8 @@ const usecurrencyconverter = (currency)=>{
         console.log(data);
     },[currency])
     console.log(data);
-    return {data,error};
+    return data;
+    // return {data,error};
 }
 
 export default usecurrencyconverter;
