@@ -12,7 +12,7 @@ const TodoContext = createContext({
     toggleCompleted : (todoId) =>{}
 })
 
-export const TodoContextProvider = TodoContext.Provider;
+export const TodoContextProvider = TodoContext.Provider
 
 export const useTodoContext = ()=>{
     return useContext(TodoContext);
