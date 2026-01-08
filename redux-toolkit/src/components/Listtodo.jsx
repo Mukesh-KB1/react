@@ -33,21 +33,25 @@ function Listtodo() {
 
                         <div style={{ display: "flex", gap: "4px" }}>
 
-                            {/* EDIT */}
                             <button
                                 onClick={() => {
+                                    //Update
+                                    if(todo.id === editingId){
+                                        dispatch(updateTodo({id : todo.id,title : todoMsg}))
+                                        setEditingId(null)
+                                        setTodoMsg("")
+                                    }
+
+                                    //Edit
+                                    else{
+                                        setEditingId(todo.id);
+                                        setTodoMsg(todo.title);
+                                    }
 
                                 }}
-                                // disabled={editingId === todo.id}
-                                style={{
-                                    background: "#2563eb",
-                                    border: "none",
-                                    padding: "4px",
-                                    cursor: "pointer",
-                                    borderRadius: "4px",
-                                }}
+                                className="bg-blue-600 border-none p-1 cursor-pointer rounded"
                             >
-                                {false ? "💾" : "✏️"}
+                                {todo.id === editingId ? "💾" : "✏️"}
                             </button>
 
 
